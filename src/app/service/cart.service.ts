@@ -27,13 +27,28 @@ export class CartService {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice;
+   //  console.log(this.cartItemList)
   }
 //calculating total price of products in the cart
-  getTotalPrice(){
+  getTotalPrice(){  
     let grandTotal  = 0;
     this.cartItemList.map((a:any)=>{
       grandTotal += a.total;
     })
+  }
+
+  removeCartItem(product:any){
+    this.cartItemList.map((a :any, index:any ) =>{
+      if(product.id === a.id){
+        this.cartItemList.splice(index,1);
+      }
+    } )
+  }
+
+  removeAllCart(){
+this.cartItemList = []
+this.productList.next(this.cartItemList); 
+
   }
 
 }
