@@ -1,34 +1,34 @@
 <div class="card-top container-fluid">
       <div class="container d-flex">
             <div class="item">
-                <a>
+                <a (click)="filter('')">
                 <img src="assets/images/all.png"/>
                   <h6>All Products</h6>
                 </a>
             </div>
             <div class="item">
-                <a>
+                <a (click)="filter('electronics')">
                 <img src="assets/images/electronics.png"/>
                  <h6>Electronics</h6>
                 </a>
             </div>
             <div class="item">
-                <a>
+                <a (click)="filter('fashion')">
                 <img src="assets/images/fashion.png"/>
                 <h6>Fashion</h6>
             </a>
             </div>
             <div class="item">
-                <a>
+                <a (click)="filter('jewelery')">
                 <img style="width: 45px; margin-top: 5px;" src="assets/images/jewellary.jfif"/>
-                <h6>Jewelry</h6>
+                <h6>Jewllery</h6>
             </a>
             </div>
       </div>
 </div>
 <div class="container">
     <div class="row">
-        <ng-container *ngFor="let item of productList | filter:searchKey:'title'">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
         <div class="card col-md-3">
             <img src="{{item.image}}" alt=""/>
             <h5 style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.title}}</h5>
