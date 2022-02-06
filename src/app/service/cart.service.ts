@@ -9,6 +9,7 @@ export class CartService {
   public cartItemList : any = [];
   //property to emit or allow users to subscribe for data
   public productList = new BehaviorSubject<any>([]); 
+  public search = new BehaviorSubject<string>("");
 
   constructor() { }
 //getter for getting products

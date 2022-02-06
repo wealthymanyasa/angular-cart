@@ -7,7 +7,7 @@
            <strong style="font-size: 30px; color: chartreuse;">OZZ Store</strong>
 
            <div class="form-group">
-                 <input type="text" placeholder="Search Products" class="form-control"/>
+                 <input type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search Products"  class="form-control"/>
            </div>
   
        </div>
